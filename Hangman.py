@@ -3,11 +3,13 @@ word=list(input('Input your word:'))
 worddupe=word[::1]
 mistakes=1
 displayword=[]
+
 for i in word:
 	if i in 'aeiou':
 		displayword.append('_')
 	else:
 		displayword.append('-')
+		
 def guessing():
 	print(displayword)
 	global mistakes
@@ -30,6 +32,7 @@ def guessing():
 				print(hangman[i]+'\n')
 			falseonce=True	
 	[guesswork() for i in range(100)]
+	
 while mistakes<7 and len(worddupe)>0:
 	guessing()
 	correctonce=False
